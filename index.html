@@ -107,7 +107,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Cinzel',serif;font-siz
 
 .moon-hero-text{
   position:absolute;inset:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;text-align:center;padding:2rem;z-index:2;pointer-events:none
+  align-items:center;justify-content:center;text-align:center;padding:2rem;z-index:4;pointer-events:none
 }
 .moon-eyebrow{font-family:'Cinzel',serif;font-size:clamp(.65rem,1.2vw,.85rem);letter-spacing:.4em;
   text-transform:uppercase;color:var(--gold2);margin-bottom:1.2rem;opacity:0;animation:fade-up 1s .5s forwards}
@@ -123,34 +123,22 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Cinzel',serif;font-siz
   color:rgba(255,255,255,.35);opacity:0;animation:fade-up 1.2s 1.8s forwards;max-width:480px;line-height:1.7}
 
 .scroll-cue{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;animation:fade-up 1s 2.5s forwards;z-index:3}
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;animation:fade-up 1s 2.5s forwards;z-index:5}
 .scroll-cue-text{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.3)}
 .scroll-cue-arrow{width:22px;height:22px;border-right:1.5px solid rgba(255,255,255,.25);
   border-bottom:1.5px solid rgba(255,255,255,.25);transform:rotate(45deg);animation:bounce-cue 1.8s ease-in-out infinite}
 
 /* Moon */
-#moon{position:absolute;left:50%;top:50%;--sz:clamp(260px,44vmin,520px);
-  width:var(--sz);height:var(--sz);transform:translate(-50%,-50%);will-change:transform,opacity;z-index:4}
-.moon-body{
-  position:absolute;inset:0;border-radius:50%;overflow:hidden;
-  background:
-    radial-gradient(ellipse at 26% 25%,rgba(255,255,235,.55) 0%,transparent 44%),
-    radial-gradient(circle at 68% 70%,rgba(18,13,3,.38) 0%,transparent 38%),
-    radial-gradient(circle at 36% 60%,rgba(14,10,2,.3) 0%,transparent 25%),
-    radial-gradient(circle at 64% 34%,rgba(16,12,3,.24) 0%,transparent 20%),
-    radial-gradient(circle at 22% 72%,rgba(12,8,2,.22) 0%,transparent 17%),
-    radial-gradient(circle at 80% 22%,rgba(15,11,3,.18) 0%,transparent 14%),
-    radial-gradient(circle at 50% 50%,#f2eeda 0%,#dcd8b5 26%,#c2be93 50%,#a09c70 68%,#827e50 82%,#6a6642 100%);
-  box-shadow:inset -68px -44px 115px rgba(0,0,0,.82),inset 18px 14px 48px rgba(255,250,200,.3)
+#moon{position:absolute;left:50%;top:50%;--sz:clamp(280px,46vmin,540px);
+  width:var(--sz);height:var(--sz);transform:translate(-50%,-50%);will-change:transform,opacity;z-index:2}
+#moon img{
+  display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;
+  filter:brightness(.78) saturate(.28) contrast(1.08);
+  box-shadow:0 0 90px rgba(180,185,200,.18),0 0 200px rgba(160,165,185,.09)
 }
-.moon-crater{position:absolute;border-radius:50%;transform:translate(-50%,-50%);
-  background:radial-gradient(circle at 38% 30%,rgba(215,210,170,.48) 0%,rgba(128,122,88,.6) 38%,rgba(72,68,42,.72) 64%,rgba(88,83,58,.45) 84%,transparent 100%);
-  box-shadow:inset 1.5px 1.5px 5px rgba(255,248,210,.4),inset -2px -2px 8px rgba(0,0,0,.7)}
-.moon-atmo{position:absolute;inset:-4px;border-radius:50%;
-  background:radial-gradient(circle at 50% 50%,transparent 64%,rgba(230,220,160,.05) 80%,rgba(220,210,130,.1) 96%,transparent 100%)}
-.moon-glow{position:absolute;inset:-20%;border-radius:50%;pointer-events:none;
-  background:radial-gradient(circle at 50% 50%,transparent 48%,rgba(220,215,155,.07) 65%,rgba(200,190,110,.12) 80%,transparent 100%);
-  box-shadow:0 0 120px rgba(220,210,140,.2),0 0 280px rgba(200,190,110,.09)}
+.moon-glow{position:absolute;inset:-22%;border-radius:50%;pointer-events:none;z-index:1;
+  background:radial-gradient(circle at 50% 50%,transparent 46%,rgba(190,195,215,.06) 62%,rgba(170,175,200,.1) 78%,transparent 100%);
+  box-shadow:0 0 100px rgba(180,185,210,.16),0 0 260px rgba(160,165,195,.08)}
 
 /* Below-moon content */
 .below-moon{position:relative;z-index:2;padding:5rem 1.5rem}
@@ -308,17 +296,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-family:'Cinzel',serif;font-siz
 
       <div id="moon">
         <div class="moon-glow"></div>
-        <div class="moon-body">
-          <div class="moon-crater" style="left:34%;top:54%;width:18%;height:18%;"></div>
-          <div class="moon-crater" style="left:61%;top:38%;width:13%;height:13%;"></div>
-          <div class="moon-crater" style="left:53%;top:23%;width:8.5%;height:8.5%;"></div>
-          <div class="moon-crater" style="left:19%;top:66%;width:14%;height:14%;"></div>
-          <div class="moon-crater" style="left:73%;top:71%;width:7%;height:7%;"></div>
-          <div class="moon-crater" style="left:79%;top:44%;width:5.5%;height:5.5%;"></div>
-          <div class="moon-crater" style="left:44%;top:81%;width:9%;height:9%;"></div>
-          <div class="moon-crater" style="left:28%;top:38%;width:6%;height:6%;"></div>
-        </div>
-        <div class="moon-atmo"></div>
+        <img src="https://images.unsplash.com/photo-1764970692776-ce5fb30a7509?auto=format&fit=crop&w=1000&q=88" alt="Full moon with visible craters" />
       </div>
 
       <div class="scroll-cue">
